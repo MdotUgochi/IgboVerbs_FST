@@ -3,9 +3,8 @@ Visual Transducer for Igbo Verb Morphology
 """
 
 import streamlit as st
-import csv
-import os
-import random
+import graphviz
+import csv, os, random
 from igbo_fst import load_corpus, extract_patterns, IgboFST
 
 # ── Page config ───────────────────────────────────────────────────────────────
@@ -39,80 +38,58 @@ STATE_COLORS = {
 }
 ACCEPT_STATES = {'ROOT', 'EXT_SUFFIX', 'IMP_SUFFIX', 'INFL_SUFFIX'}
 
-# ── Build DOT string directly (no graphviz import needed) ─────────────────────
-def build_dot(active_state='START', trace=None):
-    """
-    Returns a DOT language string for st.graphviz_chart().
-    No graphviz Python package or system binary required.
-    """
-    visited = {t['state'] for t in trace} if trace else set()
-    visited.add('START')
+def build_diagram(active_state='START', trace=None):
+    g = graphviz.Digraph(comment='Igbo FST')
+    g.attr(rankdir='LR', bgcolor='transparent', fontname='Helvetica')
+    g.attr('node', fontname='Helvetica', fontsize='12')
 
-    # Collect traversed edges from trace
-    traversed_edges = set()
-    if trace:
-        prev = 'START'
-        for step in trace:
-            traversed_edges.add((prev, step['state'], step['type']))
-            prev = step['state']
+    visited_states = {t['state'] for t in trace} if trace else set()
+    visited_states.add('START')
 
-    lines = ['digraph IgboFST {']
-    lines.append('    rankdir=LR;')
-    lines.append('    bgcolor="transparent";')
-    lines.append('    node [fontname="Helvetica" fontsize=11];')
-    lines.append('    edge [fontname="Helvetica" fontsize=9];')
+    for state, props in IgboFST.STATES.items():
+        is_active  = state == active_state
+        is_accept  = props['is_accept']
+        is_visited = state in visited_states
 
-    # Nodes
-    for state, color in STATE_COLORS.items():
-        is_active  = (state == active_state)
-        is_accept  = state in ACCEPT_STATES
+        color      = STATE_COLORS.get(state, '#ffffff')
+        penwidth   = '3' if is_active else '1'
+        style      = 'filled,bold' if is_active else ('filled,dashed' if is_accept else 'filled')
+        fontcolor  = '#000000'
+        shape      = 'doublecircle' if is_accept else 'circle'
 
         if is_active:
-            fill  = '#FF6B35'
-            font  = 'white'
-            width = '2.5'
+            color = '#FF6B35'
+            fontcolor = '#FFFFFF'
         elif state == 'REJECT':
-            fill  = '#FFAAAA'
-            font  = '#333333'
-            width = '1'
-        else:
-            fill  = color
-            font  = '#1A1F4B'
-            width = '1'
+            color = '#FFCCCC'
 
-        shape = 'doublecircle' if is_accept else 'circle'
-        label = state.replace('_', '\\n')
+        g.node(state, label=state.replace('_','\n'),
+               shape=shape, style=style, fillcolor=color,
+               fontcolor=fontcolor, penwidth=penwidth,
+               width='1.0', height='1.0')
 
-        lines.append(
-            f'    {state} [label="{label}" shape={shape} style="filled" '
-            f'fillcolor="{fill}" fontcolor="{font}" penwidth={width}];'
-        )
-
-    # Collect all transitions and group by (from, to) to merge labels
-    from collections import defaultdict
-    edge_labels = defaultdict(list)
+    # Draw transitions
+    drawn = set()
     for (from_s, mtype), to_s in IgboFST.TRANSITIONS.items():
-        short = mtype.replace('_suffix', '').replace('bound_', 'b.')
-        edge_labels[(from_s, to_s)].append((mtype, short))
+        key = (from_s, to_s, mtype)
+        if key not in drawn:
+            # Check if this edge was traversed
+            is_used = False
+            if trace:
+                for i, step in enumerate(trace):
+                    prev = trace[i-1]['state'] if i > 0 else 'START'
+                    if step['type'] == mtype and prev == from_s:
+                        is_used = True
+                        break
+            g.edge(from_s, to_s,
+                   label=mtype.replace('_','\n'),
+                   color='#FF6B35' if is_used else '#888888',
+                   penwidth='2.5' if is_used else '1',
+                   fontsize='9',
+                   fontcolor='#FF6B35' if is_used else '#555555')
+            drawn.add(key)
 
-    # Edges
-    for (from_s, to_s), type_pairs in edge_labels.items():
-        # Check if any variant of this edge was traversed
-        is_used = any(
-            (from_s, to_s, mtype) in traversed_edges
-            for mtype, _ in type_pairs
-        )
-        combined_label = '\\n'.join(short for _, short in type_pairs)
-        color    = '#FF6B35' if is_used else '#888888'
-        penwidth = '2.5'     if is_used else '1'
-        lines.append(
-            f'    {from_s} -> {to_s} [label="{combined_label}" '
-            f'color="{color}" penwidth={penwidth} fontcolor="{color}"];'
-        )
-
-    lines.append('}')
-    return '\n'.join(lines)
-
+    return g
 
 # ── Sidebar ───────────────────────────────────────────────────────────────────
 with st.sidebar:
@@ -132,69 +109,57 @@ with st.sidebar:
         "prefix":       "Derivational prefix (i, e, a, ị)",
         "bound_prefix": "Bound participle prefix",
         "root":         "Core verb root",
-        "ext_suffix":   "Extensional suffix",
+        "ext_suffix":   "Extensional suffix (meaning modifier)",
         "imp_suffix":   "Imperative suffix",
         "infl_suffix":  "Inflectional suffix (tense/aspect/neg)",
     }
     for t, desc in type_guide.items():
         st.markdown(f"**{t}** — {desc}")
-    st.divider()
-    st.caption("Built with Python · Streamlit · Koskenniemi (1983)")
-
 
 # ══════════════════════════════════════════════════════════════════════════════
 # MODE 1 — ANALYZE
 # ══════════════════════════════════════════════════════════════════════════════
 if mode == "🔬 Analyze":
     st.title("Morphological Analysis")
-    st.markdown(
-        "Enter an Igbo verb form as **pipe-separated morphemes** (e.g. `bia | cha | ra`) "
-        "or type the **full word** for auto-segmentation."
-    )
+    st.markdown("Enter an Igbo verb form as pipe-separated morphemes, or type the full word.")
 
     col1, col2 = st.columns([1, 1])
 
     with col1:
-        input_mode = st.radio(
-            "Input type",
-            ["Pre-segmented (morphemes)", "Full word (auto-segment)"],
-            horizontal=True
-        )
-
-        result   = None
-        segments = []
+        input_mode = st.radio("Input type", ["Pre-segmented (morphemes)", "Full word (auto-segment)"],
+                              horizontal=True)
 
         if input_mode == "Pre-segmented (morphemes)":
-            user_input = st.text_input(
-                "Enter morphemes separated by |",
-                placeholder="e.g.  bia | cha | ra",
-                key="seg_input"
-            )
+            user_input = st.text_input("Enter morphemes separated by |",
+                                       placeholder="e.g.  bia | cha | ra",
+                                       key="seg_input")
             if user_input:
-                segments = [m.strip() for m in user_input.split('|') if m.strip()]
-                result   = fst.analyze(segments)
+                morphemes = [m.strip() for m in user_input.split('|') if m.strip()]
+                result = fst.analyze(morphemes)
+                segments = morphemes
         else:
-            user_input = st.text_input(
-                "Enter full word",
-                placeholder="e.g.  bịachara",
-                key="word_input"
-            )
+            user_input = st.text_input("Enter full word",
+                                       placeholder="e.g.  bịachara",
+                                       key="word_input")
             if user_input:
                 result, segments = fst.analyze_word(user_input.strip())
 
-        if user_input and result:
+        if user_input:
+            # Result badge
             if result['valid']:
-                st.success(f"✅ **VALID** — Final state: `{result['final_state']}`")
+                st.success(f"✅ **VALID** — Final state: {result['final_state']}")
             else:
-                st.error(f"❌ **INVALID** — Rejected at: `{result['final_state']}`")
+                st.error(f"❌ **INVALID** — Rejected at: {result['final_state']}")
 
+            # Translation
             st.markdown(f"**Translation:** `{result['translation']}`")
-            st.markdown("**Step-by-step trace:**")
 
+            # Step-by-step trace
+            st.markdown("**Step-by-step trace:**")
             for i, step in enumerate(result['trace']):
                 icon = "✅" if step['state'] != 'REJECT' else "❌"
                 st.markdown(
-                    f"{icon} **Step {i+1}:** `{step['segment']}` → "
+                    f"{icon} Step {i+1}: `{step['segment']}` → "
                     f"**{step['type'].upper()}** → state: `{step['state']}`"
                 )
                 if step['reason']:
@@ -202,52 +167,48 @@ if mode == "🔬 Analyze":
 
     with col2:
         st.markdown("**FST State Diagram**")
-        dot = build_dot(
-            result['final_state'] if result else 'START',
-            result['trace']       if result else []
-        )
-        st.graphviz_chart(dot, use_container_width=True)
-        if result:
-            st.caption("🟠 Orange = active / traversed state")
+        if user_input and result:
+            diagram = build_diagram(result['final_state'], result['trace'])
+        else:
+            diagram = build_diagram('START', [])
+        st.graphviz_chart(diagram, use_container_width=True)
 
+        if user_input and result:
+            st.markdown("**Legend:** 🟠 = active/traversed state")
 
 # ══════════════════════════════════════════════════════════════════════════════
-# MODE 2 — PREDICT
+# MODE 2 — PREDICT (Active Engagement — Hundhausen et al. 2002, 71% condition)
 # ══════════════════════════════════════════════════════════════════════════════
 elif mode == "🎯 Predict (Active)":
     st.title("Predict the Next State")
     st.markdown(
-        "**Active engagement mode** (Hundhausen et al., 2002). "
-        "Predict which FST state comes next *before* the system processes each morpheme."
+        "This mode implements **active engagement** (Hundhausen et al., 2002). "
+        "Predict which state the FST will enter before seeing the result."
     )
 
-    # Session state initialisation
-    for key, default in [
-        ('predict_word',     None),
-        ('predict_step',     0),
-        ('predict_score',    0),
-        ('predict_total',    0),
-        ('predict_trace',    []),
-        ('predict_state',    'START'),
-        ('predict_feedback', None),
-    ]:
-        if key not in st.session_state:
-            st.session_state[key] = default
+    if 'predict_word' not in st.session_state:
+        st.session_state.predict_word = None
+        st.session_state.predict_step = 0
+        st.session_state.predict_score = 0
+        st.session_state.predict_total = 0
+        st.session_state.predict_trace = []
+        st.session_state.predict_state = 'START'
+        st.session_state.predict_feedback = None
 
     col1, col2 = st.columns([1, 1])
 
     with col1:
         if st.button("🎲 Load Random Word"):
             entry = random.choice(corpus)
-            st.session_state.predict_word     = entry
-            st.session_state.predict_step     = 0
-            st.session_state.predict_trace    = []
-            st.session_state.predict_state    = 'START'
+            st.session_state.predict_word = entry
+            st.session_state.predict_step = 0
+            st.session_state.predict_trace = []
+            st.session_state.predict_state = 'START'
             st.session_state.predict_feedback = None
             fst.reset()
 
         if st.session_state.predict_word:
-            entry     = st.session_state.predict_word
+            entry = st.session_state.predict_word
             morphemes = entry['morphemes']
             step_idx  = st.session_state.predict_step
 
@@ -255,6 +216,7 @@ elif mode == "🎯 Predict (Active)":
             st.markdown(f"**Morphemes:** {' | '.join(morphemes)}")
             st.divider()
 
+            # Show completed steps
             for i, t in enumerate(st.session_state.predict_trace):
                 st.markdown(f"✅ Step {i+1}: `{t['segment']}` → **{t['state']}**")
 
@@ -270,9 +232,10 @@ elif mode == "🎯 Predict (Active)":
                 )
 
                 if st.button("Submit Prediction"):
-                    fst.current_state  = st.session_state.predict_state
-                    fst.output_labels  = []
-                    fst.trace          = []
+                    # Run actual FST step
+                    fst.current_state = st.session_state.predict_state
+                    fst.output_labels = []
+                    fst.trace = []
                     new_state, label, reason = fst.step(current_seg)
 
                     st.session_state.predict_total += 1
@@ -289,6 +252,7 @@ elif mode == "🎯 Predict (Active)":
                     st.session_state.predict_state = new_state
                     st.session_state.predict_step += 1
                     st.rerun()
+
             else:
                 final = st.session_state.predict_state
                 if IgboFST.STATES[final]['is_accept']:
@@ -296,6 +260,7 @@ elif mode == "🎯 Predict (Active)":
                 else:
                     st.error(f"❌ Complete! Final state: **{final}** — INVALID word")
 
+            # Feedback
             if st.session_state.predict_feedback:
                 fb = st.session_state.predict_feedback
                 if fb[0] == 'correct':
@@ -303,22 +268,20 @@ elif mode == "🎯 Predict (Active)":
                 else:
                     st.error(f"❌ Wrong. You predicted `{fb[3]}`, actual: `{fb[1]}` | {fb[2]}")
 
+            # Score
             if st.session_state.predict_total > 0:
                 pct = st.session_state.predict_score / st.session_state.predict_total * 100
-                st.metric(
-                    "Prediction Accuracy",
-                    f"{st.session_state.predict_score}/{st.session_state.predict_total}",
-                    f"{pct:.0f}%"
-                )
+                st.metric("Prediction Accuracy",
+                          f"{st.session_state.predict_score}/{st.session_state.predict_total}",
+                          f"{pct:.0f}%")
 
     with col2:
         st.markdown("**FST State Diagram**")
-        dot = build_dot(
+        diagram = build_diagram(
             st.session_state.predict_state,
             st.session_state.predict_trace
         )
-        st.graphviz_chart(dot, use_container_width=True)
-
+        st.graphviz_chart(diagram, use_container_width=True)
 
 # ══════════════════════════════════════════════════════════════════════════════
 # MODE 3 — BUILD A WORD
@@ -330,67 +293,53 @@ elif mode == "🧩 Build a Word":
     if 'build_morphemes' not in st.session_state:
         st.session_state.build_morphemes = []
 
-    all_morphemes = {
-        mtype: sorted(patterns.get(mtype, set()))
-        for mtype in ['aux', 'prefix', 'bound_prefix', 'root',
-                      'ext_suffix', 'imp_suffix', 'infl_suffix']
-    }
+    all_morphemes = {}
+    for mtype in ['aux', 'prefix', 'bound_prefix', 'root', 'ext_suffix', 'imp_suffix', 'infl_suffix']:
+        all_morphemes[mtype] = sorted(patterns.get(mtype, set()))
 
     col1, col2 = st.columns([1, 1])
 
     with col1:
-        st.markdown("**Add morphemes one at a time:**")
+        st.markdown("**Add morphemes:**")
         for mtype, forms in all_morphemes.items():
-            if not forms:
-                continue
-            c1, c2 = st.columns([2, 1])
-            with c1:
-                selected = st.selectbox(
-                    f"{mtype}",
-                    ['— skip —'] + forms,
-                    key=f"build_{mtype}"
-                )
-            with c2:
-                st.write("")
-                if st.button(f"Add", key=f"add_{mtype}"):
+            if forms:
+                selected = st.selectbox(f"Add {mtype}:", ['— skip —'] + forms,
+                                        key=f"build_{mtype}")
+                if st.button(f"Add {mtype}", key=f"add_{mtype}"):
                     if selected != '— skip —':
                         st.session_state.build_morphemes.append((selected, mtype))
                         st.rerun()
 
-        if st.button("🗑️ Clear all"):
+        if st.button("🗑️ Clear"):
             st.session_state.build_morphemes = []
             st.rerun()
 
         st.divider()
-
         if st.session_state.build_morphemes:
             morpheme_list = [m for m, _ in st.session_state.build_morphemes]
             result = fst.analyze(morpheme_list)
-            assembled = '-'.join(morpheme_list)
 
+            assembled = '-'.join(morpheme_list)
             st.markdown(f"**Assembled:** `{assembled}`")
             st.markdown(f"**Translation:** `{result['translation']}`")
 
             if result['valid']:
-                st.success(f"✅ VALID verb form! Final state: `{result['final_state']}`")
+                st.success(f"✅ VALID verb form! Final state: {result['final_state']}")
             else:
-                st.error(f"❌ INVALID — rejected at `{result['final_state']}`")
+                st.error(f"❌ INVALID — {result['final_state']}")
                 for step in result['trace']:
                     if step['reason']:
                         st.caption(f"⚠️ {step['reason']}")
-        else:
-            st.info("Add morphemes above to start building a word.")
 
     with col2:
         st.markdown("**FST State Diagram**")
         if st.session_state.build_morphemes:
             morpheme_list = [m for m, _ in st.session_state.build_morphemes]
             result = fst.analyze(morpheme_list)
-            dot = build_dot(result['final_state'], result['trace'])
+            diagram = build_diagram(result['final_state'], result['trace'])
         else:
-            dot = build_dot('START', [])
-        st.graphviz_chart(dot, use_container_width=True)
-
+            diagram = build_diagram('START', [])
+        st.graphviz_chart(diagram, use_container_width=True)
 
 # ══════════════════════════════════════════════════════════════════════════════
 # MODE 4 — CORPUS STATS
@@ -398,51 +347,34 @@ elif mode == "🧩 Build a Word":
 elif mode == "📊 Corpus Stats":
     st.title("Corpus Statistics")
 
-    c1, c2, c3, c4 = st.columns(4)
-    c1.metric("Total Entries",      len(corpus))
-    c2.metric("Unique Roots",        len(patterns['root']))
-    c3.metric("Sequence Patterns",   len(patterns['sequences']))
-    c4.metric("Ext. Suffixes",       len(patterns['ext_suffix']))
+    col1, col2, col3, col4 = st.columns(4)
+    col1.metric("Total Entries", len(corpus))
+    col2.metric("Unique Roots", len(patterns['root']))
+    col3.metric("Sequence Patterns", len(patterns['sequences']))
+    col4.metric("Ext. Suffixes", len(patterns['ext_suffix']))
 
     st.divider()
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown("**Grammatical Category Distribution**")
+        st.markdown("**Sequence Patterns (by frequency)**")
         from collections import Counter
-        cat_counts = Counter(entry['gram_cat'] for entry in corpus)
-        for cat, count in cat_counts.most_common():
-            pct = count / len(corpus) * 100
-            st.markdown(f"`{cat}` — **{count}** entries ({pct:.1f}%)")
+        seq_counts = Counter(entry['gram_cat'] for entry in corpus)
+        for cat, count in seq_counts.most_common(15):
+            st.markdown(f"`{cat}` — {count} entries")
 
     with col2:
         st.markdown("**Morpheme Sets**")
-        for mtype in ['aux', 'prefix', 'bound_prefix', 'root',
-                      'ext_suffix', 'imp_suffix', 'infl_suffix']:
+        for mtype in ['aux','prefix','bound_prefix','root','ext_suffix','imp_suffix','infl_suffix']:
             mset = sorted(patterns.get(mtype, set()))
-            items = ', '.join(f'`{m}`' for m in mset)
-            st.markdown(f"**{mtype}** ({len(mset)}): {items}")
+            st.markdown(f"**{mtype}** ({len(mset)}): {', '.join(f'`{m}`' for m in mset)}")
 
     st.divider()
-    st.markdown("**Random Corpus Sample**")
+    st.markdown("**Corpus Sample**")
     sample = random.sample(corpus, min(10, len(corpus)))
     for entry in sample:
         st.markdown(
-            f"`{entry['word']}` — *{entry['glosses']}* | "
-            f"`{'|'.join(entry['morphemes'])}` | "
-            f"{' | '.join(entry['types'])}"
-        )
-
-    st.divider()
-    st.markdown("**IgbTok Pipeline Demo**")
-    st.markdown(
-        "IgbTok (Stage 1) splits text at word boundaries. "
-        "This FST (Stage 2) decomposes the resulting verb tokens into morphemes."
-    )
-    demo_words = ['bịachara', 'abịaghị', 'laghachiri', 'rijuru', 'ejeghị']
-    for word in demo_words:
-        result, segs = fst.analyze_word(word)
-        status = "✅" if result['valid'] else "❌"
-        st.markdown(
-            f"{status} **`{word}`** → `{result['translation']}`"
+            f"`{entry['word']}` — {entry['glosses']} | "
+            f"`{' | '.join(entry['morphemes'])}` | "
+            f"*{' | '.join(entry['types'])}*"
         )
