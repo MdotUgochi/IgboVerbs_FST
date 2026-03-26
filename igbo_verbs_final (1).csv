@@ -1,0 +1,352 @@
+word,segmented,morphemes,types,glosses,grammatical_category
+bịa,bia,bia,root,come,Present Tense
+ịbịa,i-bia,i|bia,prefix|root,to come,Infinitive
+bịara,bia-ra,bia|ra,root|infl_suffix,came,Past Tense
+na-bịa,na-bia,na|bia,aux|root,is coming,Progressive Aspect
+bịala,bia-la,bia|la,root|infl_suffix,has come,Perfect
+abịaghị,a-bia-ghi,a|bia|ghi,prefix|root|infl_suffix,did not come,Negative
+bịachara,bia-cha-ra,bia|cha|ra,root|ext_suffix|infl_suffix,all came,Exhaustive Past
+bịaghachi,bia-ghachi,bia|ghachi,root|ext_suffix,come back,Repetitive Present
+bịaghachiri,bia-ghachi-ri,bia|ghachi|ri,root|ext_suffix|infl_suffix,has come back,Perfect
+ibiaghachi,i-bia-ghachi,i|bia|ghachi,prefix|root|ext_suffix,to come back,Infinitive Repetitive
+iri,i-ri,i|ri,prefix|root,to eat,Infinitive
+rie,ri-e,ri|e,root|imp_suffix,eat,Present Tense
+riri,ri-ri,ri|ri,root|infl_suffix,ate,Past Tense
+na-eri,na-e-ri,na|e|ri,aux|bound_prefix|root,is eating,Progressive Aspect
+rila,ri-la,ri|la,root|infl_suffix,has eaten,Perfect
+erighị,e-ri-ghi,e|ri|ghi,prefix|root|infl_suffix,did not eat,Negative
+rijuru,ri-ju-ru,ri|ju|ru,root|ext_suffix|infl_suffix,ate to satisfaction,Perfective
+richa,ri-cha,ri|cha,root|ext_suffix,ate completely,Exhaustive Past
+richara,ri-cha,ri|cha,root|ext_suffix,has eaten completely,Perfect
+ije,i-je,i|je,prefix|root,to go,Infinitive
+je,je,je,root,go,Present Tense
+jere,je-re,je|re,root|infl_suffix,went,Past Tense
+na-eje,na-e-je,na|e|je,aux|bound_prefix|root,is going,Progressive Aspect
+jela,je-la,je|la,root|infl_suffix,has gone,Perfect
+ejeghị,e-je-ghi,e|je|ghi,prefix|root|infl_suffix,did not go,Negative
+jegidere,je-gide-re,je|gide|re,root|ext_suffix|infl_suffix,kept going,Repetitive Past
+jewere,je-we-re,je|we|re,root|ext_suffix|infl_suffix,started going,Present Tense
+ịhụ,i-hụ,i|hụ,prefix|root,to see,Infinitive
+hụ,hụ,hụ,root,see,Present Tense
+hụrụ,hụ-ru,hụ|ru,root|infl_suffix,saw,Past Tense
+na-ahụ,na-a-hụ,na|a|hụ,aux|bound_prefix|root,is seeing,Progressive Aspect
+hụla,hụ-la,hụ|la,root|infl_suffix,has seen,Perfect
+ahụghị,a-hụ-ghi,a|hụ|ghi,bound_prefix|root|infl_suffix,did not see,Negative
+hụchara,hụ-cha-ra,hụ|cha|ra,root|ext_suffix|infl_suffix,saw everything,Present Tense
+hụtara,hụ-ta-ra,hụ|ta|ra,root|ext_suffix|infl_suffix,caught sight of,Present Tense
+ịgụ,i-gu,i|gu,prefix|root,to read / count,Infinitive
+gụọ,gu-ọ,gu|ọ,root|imp_suffix,read!,Imperative
+gụrụ,gu,gu,root,read (past),Present Tense
+na-agụ,na-a-gu,na|a|gu,aux|bound_prefix|root,is reading,Progressive Aspect
+gụla,gu,gu,root,has read,Present Tense
+agụghị,a-gu,a|gu,bound_prefix|root,did not read,Negative
+gụchara,gu-cha,gu|cha,root|ext_suffix,finished reading,Present Tense
+gụgharị,gu-gharị,gu|gharị,root|ext_suffix,read again,Repetitive Past
+gụgharịrị,gu-gharị-rị,gu|gharị|rị,root|ext_suffix|infl_suffix,read again,Repetitive Past
+ide,i-de,i|de,prefix|root,to write,Infinitive
+dee,de-e,de|e,root|imp_suffix,write!,Imperative
+dere,de-re,de|re,root|infl_suffix,wrote,Past Tense
+na-ede,na-e-de,na|e|de,aux|bound_prefix|root,is writing,Progressive Aspect
+dela,de-la,de|la,root|infl_suffix,has written,Perfect
+edeghị,e-de-ghi,e|de|ghi,bound_prefix|root|infl_suffix,did not write,Negative
+dechara,de-cha-ra,de|cha|ra,root|ext_suffix|infl_suffix,finished writing,Present Tense
+dekọta,de-kọta,de|kọta,root|ext_suffix,write together,Present Tense
+dekọtara,de-kọta-ra,de|kọta|ra,root|ext_suffix|infl_suffix,wrote together,Present Tense
+deghachi,de-ghachi,de|ghachi,root|ext_suffix,re-write,Present Tense
+ikwu,i-kwu,i|kwu,prefix|root,to speak,Infinitive
+kwuo,kwu-o,kwu|o,root|imp_suffix,speak!,Imperative
+kwuru,kwu-ru,kwu|ru,root|infl_suffix,spoke,Past Tense
+na-ekwu,na-e-kwu,na|e|kwu,aux|bound_prefix|root,is speaking,Progressive Aspect
+kwula,kwu-la,kwu|la,root|infl_suffix,has spoken,Perfect
+ekwughị,e-kwu-ghi,e|kwu|ghi,bound_prefix|root|infl_suffix,did not speak,Negative
+kwughachi,kwu-ghachi,kwu|ghachi,root|ext_suffix,repeat,Present Tense
+kwupụta,kwu-puta,kwu|puta,root|ext_suffix,speak out,Present Tense
+kwupụtara,kwu-puta-ra,kwu|puta|ra,root|ext_suffix|infl_suffix,spoke out,Present Tense
+ime,i-me,i|me,prefix|root,to do,Infinitive
+mee,me-e,me|e,root|imp_suffix,do it,Present Tense
+mere,me-re,me|re,root|infl_suffix,did,Past Tense
+na-eme,na-e-me,na|e|me,aux|bound_prefix|root,is doing,Progressive Aspect
+mela,me-la,me|la,root|infl_suffix,has done,Perfect
+emeghị,e-me-ghi,e|me|ghi,bound_prefix|root|infl_suffix,did not do,Negative
+mecha,me-cha,me|cha,root|ext_suffix,finish,Present Tense
+mechara,me-cha-ra,me|cha|ra,root|ext_suffix|infl_suffix,has finished,Past Tense
+mebi,me-bi,me|bi,root|ext_suffix,spoil,Present Tense
+mebiri,me-bi-ri,me|bi|ri,root|ext_suffix|infl_suffix,has spoilt,Perfect
+ịmụ,mụ,mụ,root,to learn,Infinitive
+mụọ,mụ-ọ,mụ|ọ,root|imp_suffix,learn,Present Tense
+mụrụ,mụ,mụ,root,learned,Present Tense
+na-amụ,na-a-mụ,na|a|mụ,aux|bound_prefix|root,is learning,Progressive Aspect
+mụọla,mụ-ọ-la,mụ|ọ|la,root|imp_suffix|infl_suffix,has learned,Past Tense
+amụghị,a-mụ-ghi,a|mụ|ghi,bound_prefix|root|infl_suffix,did not learn,Negative
+mụgharịrị,mụ-gharị-rị,mụ|gharị|rị,root|ext_suffix|infl_suffix,relearned,Past Tense
+mụtara,mụ-ta-ra,mụ|ta|ra,root|ext_suffix|infl_suffix,acquired knowledge,Present Tense
+ịzụ,ị-zụ,ị|zụ,prefix|root,to buy,Infinitive
+zụọ,zụ-ọ,zụ|ọ,root|imp_suffix,buy!,Imperative
+zụrụ,zụ-rụ,zụ|rụ,root|infl_suffix,bought,Past Tense
+na-azụ,na-a-zụ,na|a|zụ,aux|bound_prefix|root,is buying,Progressive Aspect
+zụla,zụ-la,zụ|la,root|infl_suffix,has bought,Perfect
+azụghị,a-zụ-ghi,a|zụ|ghi,bound_prefix|root|infl_suffix,did not buy,Negative
+zụchara,zụ-cha-ra,zụ|cha|ra,root|ext_suffix|infl_suffix,bought everything,Present Tense
+zụkọtara,zụ-kọta-ra,zụ|kọta|ra,root|ext_suffix|infl_suffix,accumulated via buying,Present Tense
+inye,i-nye,i|nye,prefix|root,to give,Infinitive
+nyee,nye-e,nye|e,root|imp_suffix,give!,Imperative
+nyere,nye-re,nye|re,root|infl_suffix,gave,Past Tense
+na-enye,na-e-nye,na|e|nye,aux|bound_prefix|root,is giving,Progressive Aspect
+nyela,nye-la,nye|la,root|infl_suffix,has given,Perfect
+enyeghị,e-nye-ghi,e|nye|ghi,bound_prefix|root|infl_suffix,did not give,Negative
+iche,i-che,i|che,prefix|root,to think / wait,Infinitive
+chee,che-e,che|e,root|imp_suffix,think!,Imperative
+chere,che-re,che|re,root|infl_suffix,waited / thought,Present Tense
+na-eche,na-e-che,na|e|che,aux|bound_prefix|root,is waiting / thinking,Progressive Aspect
+chela,che-la,che|la,root|infl_suffix,has waited,Past Tense
+echeghị,e-che-ghi,e|che|ghi,bound_prefix|root|infl_suffix,did not wait,Negative
+ibu,i-bu,i|bu,prefix|root,to carry,Infinitive
+buru,bu-ru,bu|ru,root|infl_suffix,carry,Present Tense
+ga-ebu,ga-e-bu,ga|e|bu,aux|bound_prefix|root,will carry,Future Tense
+ebubeghị,e-bu-be-ghi,e|bu|be|ghi,bound_prefix|root|ext_suffix|infl_suffix,has not yet carried,Negative
+bukwala,bu-kwa-la,bu|kwa|la,root|ext_suffix|infl_suffix,do not carry!,Imperative
+buwere,bu-we-re,bu|we|re,root|ext_suffix|infl_suffix,started carrying,Present Tense
+burịrị,bu-riri,bu|riri,root|ext_suffix,definitely carried,Past Tense
+butere,bu-te-re,bu|te|re,root|ext_suffix|infl_suffix,carried towards / brought,Present Tense
+igbu,i-gbu,i|gbu,prefix|root,to kill / cut,Infinitive
+ga-egbu,ga-e-gbu,ga|e|gbu,aux|bound_prefix|root,will kill,Future Tense
+egbubeghị,e-gbu-be-ghi,e|gbu|be|ghi,bound_prefix|root|ext_suffix|infl_suffix,has not yet killed,Negative
+gbukwala,gbu-kwa-la,gbu|kwa|la,root|ext_suffix|infl_suffix,do not kill!,Imperative
+gbuwere,gbu-we-re,gbu|we|re,root|ext_suffix|infl_suffix,started killing,Present Tense
+gburịtara,gbu-rita-la,gbu|rita|la,root|ext_suffix|infl_suffix,killed each other,Present Tense
+gburịrị,gbu-riri,gbu|riri,root|ext_suffix,definitely killed,Past Tense
+gbutere,gbu-te-re,gbu|te|re,root|ext_suffix|infl_suffix,killed and brought,Present Tense
+ike,i-ke,i|ke,prefix|root,to tie / share,Infinitive
+ga-eke,ga-e-ke,ga|e|ke,aux|bound_prefix|root,will tie,Future Tense
+na-eke,na-e-ke,na|e|ke,aux|bound_prefix|root,is tying,Progressive Aspect
+ekebeghị,e-ke-be-ghi,e|ke|be|ghi,bound_prefix|root|ext_suffix|infl_suffix,has not yet tied,Negative
+kekwala,ke-kwa-la,ke|kwa|la,root|ext_suffix|infl_suffix,do not tie!,Imperative
+kewere,ke-we-la,ke|we|la,root|ext_suffix|infl_suffix,started tying,Present Tense
+kerịtara,ke-rita-ra,ke|rita|ra,root|ext_suffix|infl_suffix,tied each other / shared,Past Tense
+kerịrị,ke-riri,ke|riri,root|ext_suffix,definitely tied,Past Tense
+ketere,ke-te-re,ke|te|re,root|ext_suffix|infl_suffix,tied successfully / received,Past Tense
+ikpe,i-kpe,i|kpe,prefix|root,to judge / plead,Infinitive
+ga-ekpe,ga-e-kpe,ga|e|kpe,aux|bound_prefix|root,will judge,Future Tense
+ekpebeghị,e-kpe-be-ghi,e|kpe|be|ghi,bound_prefix|root|ext_suffix|infl_suffix,has not yet judged,Negative
+kpekwala,kpe-kwa-la,kpe|kwa|la,root|ext_suffix|infl_suffix,do not judge!,Imperative
+kpewere,kpe-we-re,kpe|we|re,root|ext_suffix|infl_suffix,started judging,Present Tense
+kperịtara,kpe-rita-ra,kpe|rita|ra,root|ext_suffix|infl_suffix,judged each other,Present Tense
+kperịrị,kpe-riri,kpe|riri,root|ext_suffix,definitely judged,Past Tense
+kpetere,kpe-te-re,kpe|te|re,root|ext_suffix|infl_suffix,won a judgment / obtained,Past Tense
+ise,i-se,i|se,prefix|root,to pull / draw,Infinitive
+ga-ese,ga-e-se,ga|e|se,aux|bound_prefix|root,will pull,Future Tense
+esebeghị,e-se-be-ghi,e|se|be|ghi,bound_prefix|root|ext_suffix|infl_suffix,has not yet pulled,Negative
+sekwala,se-kwa-la,se|kwa|la,root|ext_suffix|infl_suffix,do not pull!,Imperative
+sewere,se-we-re,se|we|re,root|ext_suffix|infl_suffix,started pulling,Present Tense
+serịtara,se-rita-ra,se|rita|ra,root|ext_suffix|infl_suffix,pulled each other,Present Tense
+serịrị,se-riri,se|riri,root|ext_suffix,definitely pulled,Past Tense
+setere,se-te-re,se|te|re,root|ext_suffix|infl_suffix,pulled towards,Present Tense
+ite,i-te,i|te,prefix|root,to rub,Infinitive
+ga-ete,ga-te,ga|te,aux|root,will rub,Future Tense
+etebeghị,e-te-be-ghi,e|te|be|ghi,bound_prefix|root|ext_suffix|infl_suffix,has not yet rubbed,Negative
+tekwala,te-kwa-la,te|kwa|la,root|ext_suffix|infl_suffix,do not rub!,Imperative
+tewere,te-we-re,te|we|re,root|ext_suffix|infl_suffix,started rubbing,Present Tense
+terịtara,te-rita-ra,te|rita|ra,root|ext_suffix|infl_suffix,rubbed each other,Present Tense
+terịrị,te-riri,te|riri,root|ext_suffix,definitely rubbed,Past Tense
+iti,i-ti,i|ti,prefix|root,to strike / shout,Infinitive
+tie,i-ti-e,i|ti|e,prefix|root|imp_suffix,to strike / shout,Infinitive
+ga-eti,ga-e-ti,ga|e|ti,aux|bound_prefix|root,will strike,Future Tense
+etibeghị,e-ti-be-ghi,e|ti|be|ghi,bound_prefix|root|ext_suffix|infl_suffix,has not yet struck,Negative
+tikwala,ti-kwa-la,ti|kwa|la,root|ext_suffix|infl_suffix,do not strike!,Imperative
+tiwere,ti-we-re,ti|we|re,root|ext_suffix|infl_suffix,started striking,Present Tense
+tirịtara,ti-rita-ra,ti|rita|ra,root|ext_suffix|infl_suffix,struck each other,Present Tense
+tirịrị,ti-riri,ti|riri,root|ext_suffix,definitely struck,Present Tense
+titere,ti-te-re,ti|te|re,root|ext_suffix|infl_suffix,struck successfully,Present Tense
+izu,i-zu,i|zu,prefix|root,to steal,Infinitive
+ga-ezu,ga-e-zu,ga|e|zu,aux|bound_prefix|root,will steal,Future Tense
+ezubeghị,e-zu-be-ghi,e|zu|be|ghi,bound_prefix|root|ext_suffix|infl_suffix,has not yet stolen,Negative
+zukwala,zu-kwa-la,zu|kwa|la,root|ext_suffix|infl_suffix,do not steal!,Imperative
+zuwere,zu-we-re,zu|we|re,root|ext_suffix|infl_suffix,started stealing,Present Tense
+zurịtara,zu-rita-ra,zu|rita|ra,root|ext_suffix|infl_suffix,stole from each other,Present Tense
+zurịrị,zu-riri,zu|riri,root|ext_suffix,definitely stole,Present Tense
+zutere,zu-te-re,zu|te|re,root|ext_suffix|infl_suffix,stole and brought,Present Tense
+iru,i-ru,i|ru,prefix|root,to reach,Infinitive
+ga-eru,ga-e-ru,ga|e|ru,aux|bound_prefix|root,will reach,Future Tense
+erubeghị,e-ru-be-ghi,e|ru|be|ghi,bound_prefix|root|ext_suffix|infl_suffix,has not yet reached,Negative
+rukwala,ru-kwa-la,ru|kwa|la,root|ext_suffix|infl_suffix,do not reach,Present Tense
+ruwere,ru-we-re,ru|we|re,root|ext_suffix|infl_suffix,started reaching,Present Tense
+rurịtara,ru-rita-ra,ru|rita|ra,root|ext_suffix|infl_suffix,reached each other,Present Tense
+rurịrị,ru-riri,ru|riri,root|ext_suffix,definitely reached,Past Tense
+rutere,ru-te-re,ru|te|re,root|ext_suffix|infl_suffix,arrived,Past Tense
+ikwe,i-kwe,i|kwe,prefix|root,to agree,Infinitive
+kwe,kwe,kwe,root,agree,Present Tense
+ga-ekwe,ga-e-kwe,ga|e|kwe,aux|bound_prefix|root,will agree,Future Tense
+ekwebeghị,e-kwe-be-ghi,e|kwe|be|ghi,bound_prefix|root|ext_suffix|infl_suffix,has not yet agreed,Negative
+kwekwala,kwe-kwa-la,kwe|kwa|la,root|ext_suffix|infl_suffix,do not agree!,Imperative
+kwewere,kwe-we-re,kwe|we|re,root|ext_suffix|infl_suffix,started agreeing,Present Tense
+kwerịtara,kwe-rita-ra,kwe|rita|ra,root|ext_suffix|infl_suffix,agreed with each other,Present Tense
+kwerịrị,kwe-riri,kwe|riri,root|ext_suffix,definitely agreed,Past Tense
+kwetere,kwe-te-re,kwe|te|re,root|ext_suffix|infl_suffix,accepted,Past Tense
+isi,i-si,i|si,prefix|root,to cook,Infinitive
+sie,si-e,si|e,root|imp_suffix,cook,Present Tense
+ga-esi,ga-e-si,ga|e|si,aux|bound_prefix|root,will cook,Future Tense
+esibeghị,e-si-be-ghi,e|si|be|ghi,bound_prefix|root|ext_suffix|infl_suffix,has not yet cooked,Negative
+sikwala,si-kwa-la,si|kwa|la,root|ext_suffix|infl_suffix,do not cook!,Imperative
+siwere,si-we-re,si|we|re,root|ext_suffix|infl_suffix,started cooking,Present Tense
+sirịtara,si-rita-ra,si|rita|ra,root|ext_suffix|infl_suffix,cooked for each other,Present Tense
+sirịrị,si-riri,si|riri,root|ext_suffix,definitely cooked,Past Tense
+sitere,si-te-re,si|te|re,root|ext_suffix|infl_suffix,originated from,Present Tense
+ije,i-je,i|je,prefix|root,to go / walk,Infinitive
+ga-eje,ga-e-je,ga|e|je,aux|bound_prefix|root,will go,Future Tense
+ejebeghị,e-je-be-ghi,e|je|be|ghi,bound_prefix|root|ext_suffix|infl_suffix,has not yet gone,Negative
+jekwala,je-kwa-la,je|kwa|la,root|ext_suffix|infl_suffix,do not go!,Imperative
+jewere,je-we-re,je|we|re,root|ext_suffix|infl_suffix,started going,Present Tense
+jerịrị,je-riri,je|riri,root|ext_suffix,definitely went,Present Tense
+ire,i-re,i|re,prefix|root,to sell / rot,Infinitive
+ga-ere,ga-e-re,ga|e|re,aux|bound_prefix|root,will sell,Future Tense
+erebeghị,e-re-be-ghi,e|re|be|ghi,bound_prefix|root|ext_suffix|infl_suffix,has not yet sold,Negative
+rekwala,re-kwa-la,re|kwa|la,root|ext_suffix|infl_suffix,do not sell!,Imperative
+rewere,re-we-re,re|we|re,root|ext_suffix|infl_suffix,started selling,Present Tense
+rerịtara,re-rita-ra,re|rita|ra,root|ext_suffix|infl_suffix,sold to each other,Present Tense
+rerịrị,re-riri,re|riri,root|ext_suffix,definitely sold,Present Tense
+retere,re-te-re,re|te|re,root|ext_suffix|infl_suffix,profited,Past Tense
+ịchọ,i-chọ,i|chọ,prefix|root,to seek,Infinitive
+ga-achọ,ga-a-chọ,ga|a|chọ,aux|bound_prefix|root,will seek,Future Tense
+achọbeghị,a-chọ-be-ghi,a|chọ|be|ghi,bound_prefix|root|ext_suffix|infl_suffix,has not yet sought,Negative
+chọkwala,chọ-kwa-la,chọ|kwa|la,root|ext_suffix|infl_suffix,do not seek!,Imperative
+chọwara,chọ-wa-ra,chọ|wa|ra,root|ext_suffix|infl_suffix,started seeking,Present Tense
+chọrịtara,chọ-rita-ra,chọ|rita|ra,root|ext_suffix|infl_suffix,sought each other,Present Tense
+chọrịrị,chọ-riri,chọ|riri,root|ext_suffix,definitely sought,Present Tense
+chọtara,chọ-ta-ra,chọ|ta|ra,root|ext_suffix|infl_suffix,found / successfully sought,Present Tense
+ịkụ,i-kụ,i|kụ,prefix|root,to knock,Infinitive
+na-akụ,na-a-kụ,na|a|kụ,aux|bound_prefix|root,is knocking,Progressive Aspect
+ga-akụ,ga-a-kụ,ga|a|kụ,aux|bound_prefix|root,will knock,Future Tense
+akụbeghị,a-kụ-be-ghi,a|kụ|be|ghi,bound_prefix|root|ext_suffix|infl_suffix,has not yet knocked,Negative
+kụkwala,kụ-kwa-la,kụ|kwa|la,root|ext_suffix|infl_suffix,do not knock!,Imperative
+kụwara,kụ-wa-ra,kụ|wa|ra,root|ext_suffix|infl_suffix,started knocking,Present Tense
+kụrịtara,kụ-rita-ra,kụ|rita|ra,root|ext_suffix|infl_suffix,knocked each other,Present Tense
+kụrịrị,kụ-riri,kụ|riri,root|ext_suffix,definitely knocked,Past Tense
+kụtara,kụ-ta-ra,kụ|ta|ra,root|ext_suffix|infl_suffix,planted successfully,Present Tense
+ịma,i-ma,i|ma,prefix|root,to know,Infinitive
+ga-ama,ga-a-ma,ga|a|ma,aux|bound_prefix|root,will know,Future Tense
+amabeghị,a-ma-be-ghi,a|ma|be|ghi,bound_prefix|root|ext_suffix|infl_suffix,has not yet known,Negative
+makwala,ma-kwa-la,ma|kwa|la,root|ext_suffix|infl_suffix,do not know!,Imperative
+mawara,ma-wa-ra,ma|wa|ra,root|ext_suffix|infl_suffix,started knowing,Present Tense
+marịtara,ma-rita-ra,ma|rita|ra,root|ext_suffix|infl_suffix,knew each other,Present Tense
+marịrị,ma-riri,ma|riri,root|ext_suffix,definitely knew,Present Tense
+matara,ma-ta-ra,ma|ta|ra,root|ext_suffix|infl_suffix,realized,Past Tense
+ịnụ,i-nụ,i|nụ,prefix|root,to hear,Infinitive
+ga-anụ,ga-a-nụ,ga|a|nụ,aux|bound_prefix|root,will hear,Future Tense
+nụbeghị,nụ-be-ghi,nụ|be|ghi,root|ext_suffix|infl_suffix,has not yet heard,Negative
+naghị anụ,na-a-nụ-ghi,na|a|nụ|ghi,aux|bound_prefix|root|infl_suffix,does not hear,Present Tense
+nụghị,nụ-ghi,nụ|ghi,root|infl_suffix,did not hear,Negative
+nụrụ,nụ-rụ,nụ|rụ,root|infl_suffix,heard,Past Tense
+nụrịrị,nụ-riri,nụ|riri,root|ext_suffix,definitely heard,Present Tense
+nụtara,nụ-ta-ra,nụ|ta|ra,root|ext_suffix|infl_suffix,caught the sound of,Present Tense
+ịta,i-ta,i|ta,prefix|root,to bite,Infinitive
+ga-ata,ga-a-ta,ga|a|ta,aux|bound_prefix|root,will bite,Future Tense
+tara,ta-ra,ta|ra,root|infl_suffix,bit,Present Tense
+tabeghị,ta-be-ghi,ta|be|ghi,root|ext_suffix|infl_suffix,has not yet bitten,Negative
+taghi,ta,ta,root,did not bite,Negative
+naghị ata,na-a-ta-ghi,na|a|ta|ghi,aux|bound_prefix|root|infl_suffix,does not bite,Present Tense
+tawago,ta-wa-go,ta|wa|go,root|ext_suffix|infl_suffix,started biting,Present Tense
+tarịrị,ta-riri,ta|riri,root|ext_suffix,definitely bit,Present Tense
+ịza,i-za,i|za,prefix|root,to answer,Infinitive
+ga-aza,ga-a-za,ga|a|za,aux|bound_prefix|root,will answer,Future Tense
+zara,za-ra,za|ra,root|infl_suffix,answered,Past Tense
+naghi aza,na-a-za-ghi,na|a|za|ghi,aux|bound_prefix|root|infl_suffix,does not answer,Present Tense
+zabeghị,a-za-be-ghi,a|za|be|ghi,bound_prefix|root|ext_suffix|infl_suffix,has not yet answered,Negative
+zakwala,a-za-kwa-la,a|za|kwa|la,bound_prefix|root|ext_suffix|infl_suffix,do not answer,Present Tense
+zawago,za-wa-go,za|wa|go,root|ext_suffix|infl_suffix,started answering,Present Tense
+zarịrị,za-riri,za|riri,root|ext_suffix,definitely answered,Past Tense
+zatara,za-ta-ra,za|ta|ra,root|ext_suffix|infl_suffix,answered correctly,Present Tense
+ịlụ,i-lụ,i|lụ,prefix|root,to work,Infinitive
+ga-alụ,ga-a-lụ,ga|a|lụ,aux|bound_prefix|root,will work,Future Tense
+luru,lụ-ru,lụ|ru,root|infl_suffix,worked,Past Tense
+naghi alu,na-a-lụ-ghi,na|a|lụ|ghi,aux|bound_prefix|root|infl_suffix,does not work,Present Tense
+lụbeghị,lụ-be-ghi,lụ|be|ghi,root|ext_suffix|infl_suffix,has not yet worked,Negative
+lụwago,lụ-wa-go,lụ|wa|go,root|ext_suffix|infl_suffix,started working,Present Tense
+lụrịrị,lụ-riri,lụ|riri,root|ext_suffix,definitely worked,Past Tense
+ịkpọ,i-kpọ,i|kpọ,prefix|root,to call,Infinitive
+na-akpọ,na-a-kpọ,na|a|kpọ,aux|bound_prefix|root,is calling,Progressive Aspect
+ga-akpọ,ga-a-kpọ,ga|a|kpọ,aux|bound_prefix|root,will call,Future Tense
+kpọrọ,kpọ-rọ,kpọ|rọ,root|infl_suffix,called,Past Tense
+naghi akpọ,na-a-kpọ-ghi,na|a|kpọ|ghi,aux|bound_prefix|root|infl_suffix,does not call,Present Tense
+kpọbeghị,kpọ-be-ghi,kpọ|be|ghi,root|ext_suffix|infl_suffix,has not yet called,Negative
+kpọwago,kpọ-wa-go,kpọ|wa|go,root|ext_suffix|infl_suffix,started calling,Present Tense
+kpọtara,kpọ-ta-ra,kpọ|ta|ra,root|ext_suffix|infl_suffix,called over / fetched,Past Tense
+ịpụ,ị-pụ,ị|pụ,prefix|root,to leave,Infinitive
+ga-apụ,ga-a-pụ,ga|a|pụ,aux|bound_prefix|root,will leave,Future Tense
+pụgo,pụ-go,pụ|go,root|infl_suffix,has left,Perfect
+naghi apụ,na-a-pụ-ghị,na|a|pụ|ghị,aux|bound_prefix|root|infl_suffix,does not leave,Present Tense
+pụbeghị,pụ-be-ghị,pụ|be|ghị,root|ext_suffix|infl_suffix,has not yet left,Negative
+pụwara,pụ-wa-go,pụ|wa|go,root|ext_suffix|infl_suffix,started leaving,Present Tense
+pụtara,pụ-ta-ra,pụ|ta|ra,root|ext_suffix|infl_suffix,came out,Present Tense
+ịsa,ị-sa,ị|sa,prefix|root,to wash,Infinitive
+ga-asa,ga-a-sa,ga|a|sa,aux|bound_prefix|root,will wash,Future Tense
+sago,sa-go,sa|go,root|infl_suffix,has washed,Past Tense
+naghi asa,na-a-sa-ghị,na|a|sa|ghị,aux|bound_prefix|root|infl_suffix,does not wash,Present Tense
+saghị,sa-ghi,sa|ghi,root|infl_suffix,did not wash,Negative
+sabeghị,sa-be-ghị,sa|be|ghị,root|ext_suffix|infl_suffix,has not yet washed,Negative
+sawago,sa-wa-go,sa|wa|go,root|ext_suffix|infl_suffix,started washing,Present Tense
+sarịrị,sa-riri,sa|riri,root|ext_suffix,definitely washed,Past Tense
+satara,sa-ta-ra,sa|ta|ra,root|ext_suffix|infl_suffix,washed correctly,Present Tense
+ibu,i-bu,i|bu,prefix|root,to carry,Infinitive
+ga-ebu,ga-e-bu,ga|e|bu,aux|bound_prefix|root,will carry,Future Tense
+bubeghị,bu-be-ghị,bu|be|ghị,root|ext_suffix|infl_suffix,has not yet carried,Negative
+bugo,bu-go,bu|go,root|infl_suffix,has carried,Past Tense
+bughị,bu-ghị,bu|ghị,root|infl_suffix,did not carry,Negative
+burịrị,bu-rịrị,bu|rịrị,root|ext_suffix,definitely carried,Past Tense
+butere,bu-te-re,bu|te|re,root|ext_suffix|infl_suffix,brought,Present Tense
+iru,i-ru,i|ru,prefix|root,to reach,Infinitive
+ga-eru,ga-e-ru,ga|e|ru,aux|bound_prefix|root,will reach,Future Tense
+rubeghị,ru-be-ghị,ru|be|ghị,root|ext_suffix|infl_suffix,has not yet reached,Negative
+rugo,ru-go,ru|go,root|infl_suffix,has reached,Past Tense
+rughị,ru-ghị,ru|ghị,root|infl_suffix,did not reach,Negative
+rurịrị,ru-rịrị,ru|rịrị,root|ext_suffix,definitely reached,Past Tense
+rutere,ru-te-re,ru|te|re,root|ext_suffix|infl_suffix,reached destination,Present Tense
+ikwe,i-kwe,i|kwe,prefix|root,to agree,Infinitive
+ga-ekwe,ga-e-kwe,ga|e|kwe,aux|bound_prefix|root,will agree,Future Tense
+kwebeghị,kwe-be-ghị,kwe|be|ghị,root|ext_suffix|infl_suffix,has not yet agreed,Negative
+kwekwala,kwe-kwa-la,kwe|kwa|la,root|ext_suffix|infl_suffix,do not agree,Present Tense
+kwego,kwe-go,kwe|go,root|infl_suffix,has agreeing,Perfect
+kweghị,kwe-ghị,kwe|ghị,root|infl_suffix,did not agreed,Negative
+kwerịrị,kwe-rịrị,kwe|rịrị,root|ext_suffix,definitely agreed,Past Tense
+kwetere,kwe-te-re,kwe|te|re,root|ext_suffix|infl_suffix,agreed,Past Tense
+isi,i-si,i|si,prefix|root,to cook,Infinitive
+ga-esi,ga-e-si,ga|e|si,aux|bound_prefix|root,will cook,Future Tense
+na-esi,na-e-si,na|e|si,aux|bound_prefix|root,is cooking,Progressive Aspect
+esibeghị,si-be-ghị,si|be|ghị,root|ext_suffix|infl_suffix,has not yet cooked,Negative
+sikwala,si-kwa-la,si|kwa|la,root|ext_suffix|infl_suffix,do not cook,Present Tense
+sighị,si-ghị,si|ghị,root|infl_suffix,did not cooking,Negative
+sigo,si-go,si|go,root|infl_suffix,has cooked,Past Tense
+sitere,si-te-re,si|te|re,root|ext_suffix|infl_suffix,cooked correctly,Present Tense
+ije,i-je,i|je,prefix|root,to go,Infinitive
+ga-eje,ga-e-je,ga|e|je,aux|bound_prefix|root,will go,Future Tense
+na-eje,na-e-je,na|e|je,aux|bound_prefix|root,is going,Progressive Aspect
+jebeghị,je-be-ghị,je|be|ghị,root|ext_suffix|infl_suffix,has not yet gone,Negative
+jekwala,je-kwa-la,je|kwa|la,root|ext_suffix|infl_suffix,do not go,Present Tense
+jewere,je-we-re,je|we|re,root|ext_suffix|infl_suffix,started going,Present Tense
+jeghị,je-ghị,je|ghị,root|infl_suffix,did not go,Negative
+jego,je-go,je|go,root|infl_suffix,has gone,Perfect
+igbutu,i-gbu-tu,i|gbu|tu,prefix|root|ext_suffix,to cut down,Infinitive
+gbuturu,gbu-tu-ru,gbu|tu|ru,root|ext_suffix|infl_suffix,cut down,Present Tense
+na-egbutu,na-e-gbu-tu,na|e|gbu|tu,aux|bound_prefix|root|ext_suffix,is cutting down,Progressive Aspect
+gbutugo,gbu-tu-go,gbu|tu|go,root|ext_suffix|infl_suffix,has cut down,Perfect
+gbutughị,gbu-tu-ghi,gbu|tu|ghi,root|ext_suffix|infl_suffix,did not cut down,Negative
+ga-egbutu,ga-e-gbu-tu,ga|e|gbu|tu,aux|bound_prefix|root|ext_suffix,will cut down,Future Tense
+ịkwagide,i-kwa-gide,i|kwa|gide,prefix|root|ext_suffix,to keep pushing,Infinitive
+kwagide,kwa-gide,kwa|gide,root|ext_suffix,keep pushing,Repetitive Past
+kwagidere,kwa-gide-re,kwa|gide|re,root|ext_suffix|infl_suffix,kept pushing,Repetitive Past
+na-akwagide,na-a-kwa-gide,na|a|kwa|gide,aux|bound_prefix|root|ext_suffix,is continously pushing,Progressive Aspect
+akwagideghị,a-kwa-gide-ghị,a|kwa|gide|ghị,bound_prefix|root|ext_suffix|infl_suffix,did not keep pushing,Negative
+ga-akwagide,ga-a-kwa-gide,ga|a|kwa|gide,aux|bound_prefix|root|ext_suffix,will keep pushing,Future Tense
+ịlaghachi,ị-la-ghachi,ị|la|ghachi,prefix|root|ext_suffix,to go back,Infinitive Repetitive
+laghachi,la-ghachi,la|ghachi,root|ext_suffix,go back,Repetitive Present
+laghachiri,la-ghachi-ri,la|ghachi|ri,root|ext_suffix|infl_suffix,went back,Repetitive Present
+na-alaghachi,na-a-la-ghachi,na|a|la|ghachi,aux|bound_prefix|root|ext_suffix,is going back,Progressive Aspect
+laghachila,la-ghachi-la,la|ghachi|la,root|ext_suffix|infl_suffix,has gone back,Perfect
+alaghachighị,a-la-ghachi-ghị,a|la|ghachi|ghị,bound_prefix|root|ext_suffix|infl_suffix,did not go back,Negative
+ga-alaghachi,ga-a-la-ghachi,ga|a|la|ghachi,aux|bound_prefix|root|ext_suffix,will go back,Future Tense
+ibunye,i-bu-nye,i|bu|nye,prefix|root|ext_suffix,to transfer a load,Infinitive
+bunye,bu-nye,bu|nye,root|ext_suffix,transfer a load,Present Tense
+bunyere,bu-nye-re,bu|nye|re,root|ext_suffix|infl_suffix,transferred a load,Present Tense
+na-ebunye,na-e-bu-nye,na|e|bu|nye,aux|bound_prefix|root|ext_suffix,is transferring a load,Progressive Aspect
+bunyela,bu-nye-la,bu|nye|la,root|ext_suffix|infl_suffix,has transferred a load,Perfect
+bunyeghị,bu-nye-ghi,bu|nye|ghi,root|ext_suffix|infl_suffix,did not transfer a load,Negative
+ga-ebunye,ga-e-bu-nye,ga|e|bu|nye,aux|bound_prefix|root|ext_suffix,will transfer a load,Future Tense
